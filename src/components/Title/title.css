@@ -1,0 +1,11 @@
+.titlebar {
+    background-color:#2b7cbe;
+    width: 100%;
+}
+
+h1 {
+    padding-bottom: 40px;
+    padding-left: 15px;
+    text-align: center;
+    color: gray;
+}

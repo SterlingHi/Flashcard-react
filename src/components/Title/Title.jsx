@@ -1,13 +1,15 @@
 import React from 'react';
+import './title.css';
 
-
-const Title = (props) => {
+function Title(props) {
     return (
-        <React.Fragment>
-            <div className="row row spacer">
-                <h1>dCC FlashCards</h1>
+        <div className="row row-spacer">
+            <div className="col-md-12" style={{padding: 0}}>
+                <div className="titlebar col-align">                
+                    <h1>Flashcards</h1>
+                </div>
             </div>
-        </React.Fragment>
+        </div>
     );
 }
 
