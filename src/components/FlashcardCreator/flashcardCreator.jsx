@@ -1,55 +1,55 @@
-import React from 'react';
-
-
+import React from "react";
 
 const CreateFlashCards = (props) => {
-    const { values, handleChange, handleSubmit } = 
+  const { values, handleChange, handleSubmit } = useForm(create);
 
-
-function create(){
+  function create() {
     props.addNewFlashcard(values);
   }
 
-return ( 
-  <React.Fragment>
-    <form onSubmit={handleSubmit}>
-      <label>
-          Question:
-          <input 
+  return (
+    <React.Fragment>
+      <div className="creator">
+        <h1>Add a card to a collection</h1>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Question:
+            <input
               type="text"
               name="question"
               onChange={handleChange}
               values={values.question}
               required={true}
             />
-      </label>
-      <label>
-      Answer:
-              <input 
-                  type="text"
-                  name="answer"
-                  onChange={handleChange}
-                  values={values.answer}
-                  required={true}
-                />
-        </label>
-        <label>
+          </label>
+          <label>
+            Answer:
+            <input
+              type="text"
+              name="answer"
+              onChange={handleChange}
+              values={values.answer}
+              required={true}
+            />
+          </label>
+          <label>
             Collection:
-                    <select name="collectionId" onChange={handleChange} values={values.id}>
-                        {props.collections.map((collection, id) => {
-                            <option key={id}>{id}</option>
-                            return (
-                                <option value={id+1}>
-                                    {collection.name}
-                                </option>
-                            )
-                        })}
-                    </select>
-        </label>
-        <input type="submit" className="btn btn-info" value="Add" />
-      </form>
+            <select
+              name="collectionId"
+              onChange={handleChange}
+              values={values.id}
+            >
+              {props.collections.map((collection, id) => {
+                <option key={id}>{id}</option>;
+                return <option value={id + 1}>{collection.name}</option>;
+              })}
+            </select>
+          </label>
+          <input type="submit" className="btn btn-info" value="Add" />
+        </form>
+      </div>
     </React.Fragment>
-   );
-}
- 
+  );
+};
+
 export default CreateFlashCards;
